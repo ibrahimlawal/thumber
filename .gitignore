@@ -1,2 +1,13 @@
-*.ibc
-*.o
+# Ignore everything
+*
+
+# But not these files...
+!.gitignore
+!LICENSE
+!README.md
+!.htaccess
+!_thumber.php
+# etc...
+
+# ...even if they are in subdirectories
+!*/
