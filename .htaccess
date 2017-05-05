@@ -1,0 +1,13 @@
+RewriteEngine On
+
+# image shown if a visitor tries to list media
+RewriteRule ^$ _thumber.php [L]
+RewriteRule ^([0-9]{1,4}/[0-9]{1,4}/)$ _thumber.php?src=$1 [L,QSA]
+
+#images
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([0-9]{1,4}/[0-9]{1,4}/pad/.+)$ _thumber.php?src=$1 [L,QSA]
+RewriteRule ^([0-9]{1,4}/[0-9]{1,4}/.+)$ _thumber.php?src=$1 [L,QSA]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.+)$ _thumber.php?src=$1 [L,QSA]
